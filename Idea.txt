@@ -1,0 +1,2 @@
+- Tic Tac Toe
+- Szaámológép (Minden alap dolog + Terület Kerület számítás, stb)
