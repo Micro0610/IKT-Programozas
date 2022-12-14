@@ -2,4 +2,4 @@ Kérem aki fájlal bajlódik az kérem GIT-re feltöltéskor használja az aláb
 
 CREATE_FileName = Fájl Hozzáadása
 EDIT_FileName = Fájl Átírása
-DELETE_FileName = Fjál törlése
+DELETE_FileName = Fájl törlése
