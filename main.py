@@ -20,7 +20,7 @@ while(True):
             zseton = zseton + 500
         elif valasz == "N" or valasz == "n":
             break
-    if jatek == 1:
+    while jatek == 1:
         os.system('cls')
         print("\nA Roulette-t választotta!")
         while(True):
@@ -37,7 +37,7 @@ while(True):
                     print("Nyertél", tet * 2, "zsetont")
                     valasz = input("Szeretne tovább játszani? (I/N)")
                     if valasz == "I" or valasz == "i":
-                        break
+                        continue
                     elif valasz == "N" or valasz == "n":
                         break
                     break
@@ -45,13 +45,14 @@ while(True):
                     print("Sajnos nem nyertél!")
                     valasz = input("Szeretne tovább játszani? (I/N)")
                     if valasz == "I" or valasz == "i":
-                        break
+                        continue
                     elif valasz == "N" or valasz == "n":
                         os.system('cls')
                         break
                     break
                 break
             break
+        break
 
     if jatek == 2:
         os.system('cls')
