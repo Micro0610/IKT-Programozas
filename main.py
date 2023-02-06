@@ -30,6 +30,11 @@ while(True):
                 szam = int(input())
                 print("Zsetonok száma = ", zseton)
                 tet = int(input("Kérem adja meg a tét mennyiségét!\n"))
+                if tet > zseton:
+                    os.system('cls')
+                    print("Kérem adjon meg annyit amennyi zsetonja van!")
+                    print("Zsetonok száma", zseton)
+                    tet = int(input())
                 zseton = zseton - tet
                 randomszam = random.randint(1,37)
                 if szam == randomszam:
@@ -54,11 +59,74 @@ while(True):
             break
         break
 
-    if jatek == 2:
+    while jatek == 2:
         os.system('cls')
         print("\nA BlackJack-et választotta!")
+        print("Mennyi téttel szeretne játszani?")
+        tet = int(input())
+        zseton = zseton - tet
+        mehet = 1
+        kartyak = ["A", "K", "J", "Q", 1,2,3,4,5,6,7,8,9,10]
+        while(mehet == 1):
+            jatekoskartyalist = []
+            vezetokartyalist = []
+            for i in range(2):
+                randomjatekoskartya = random.choice(kartyak)
+                randomvezetokartya = random.choice(kartyak)
+                jatekoskartyalist.append(randomjatekoskartya)
+                vezetokartyalist.append(randomvezetokartya)
+                if len(jatekoskartyalist) == 2:
+                    print("Mit szeretne elvégezni?\n-(1) Stand (Kimarad a körből)\n-(2) Hit (Kér mégegy lapot)\n")
+                    print("A te kártyáid: ", jatekoskartyalist)
+                    print("Az osztó kártyái: ", vezetokartyalist)
+                    valasz = int(input())
+                    #if valasz == 1:
 
 
-    if jatek == 3:
+
+    while jatek == 3:
         os.system('cls')
         print("\nA Darts-ot válaszotta!")
+        print("Mennyi tétet szeretne kockáztatni?\n")
+        print("Zsetonok száma:", zseton)
+        tet = int(input())
+        zseton = zseton - tet
+        dartkezdo = 510
+        mehet = 1
+        while(mehet == 1):
+            haromszam = []
+            dartszamok = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,   22,24,26,28,30,32,34,36,38,40,  33,36,39,42,45,48,51,54,57,60]
+            for i in range(3):
+                randomszam = random.choice(dartszamok)
+                if randomszam > dartkezdo:
+                    os.system('cls')
+                    print("Túl lépted volna a pontszámot! Vesztettél")
+                    mehet = 0
+                    jatek = 0
+                    time.sleep(2)
+                    os.system('cls')
+                    break
+                elif randomszam <= dartkezdo:
+                    haromszam.append(randomszam)
+                    print(randomszam, "a dobott érték")
+                    dartkezdo = dartkezdo - randomszam
+                    print(dartkezdo)
+                if randomszam - dartkezdo == 0:
+                    print("Gratulálok nyertél!")
+                    zseton = zseton + 2*(tet)
+                if len(haromszam) == 3:
+                    print("Szeretne mégegyet dobni? (I/N)")
+                    valasz = input()
+                    if valasz == "I" or valasz == "i":
+                        continue
+                    elif valasz == "N" or valasz == "n":
+                        mehet = 0
+                        jatek = 0
+                        os.system('cls')
+                        break
+                    else:
+                        break
+                else:
+                    continue
+            
+
