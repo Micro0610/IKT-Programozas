@@ -70,17 +70,56 @@ while(True):
         while(mehet == 1):
             jatekoskartyalist = []
             vezetokartyalist = []
+            jatekososszeg = 0
+            vezetosszeg = 0
+            for i in range(1):
+                randomvezetokartya = random.choice(kartyak)
+                if randomvezetokartya == "A" or randomvezetokartya == "K" or randomvezetokartya == "J" or randomvezetokartya == "Q":
+                    vezetosszeg = vezetosszeg + 10
+                else:
+                    vezetosszeg = vezetosszeg + randomvezetokartya
+                vezetokartyalist.append(randomvezetokartya)
             for i in range(2):
                 randomjatekoskartya = random.choice(kartyak)
-                randomvezetokartya = random.choice(kartyak)
+                if randomjatekoskartya == "A" or randomjatekoskartya == "K" or randomjatekoskartya == "J" or randomjatekoskartya == "Q":
+                    jatekososszeg = jatekososszeg + 10
+                else:
+                    jatekososszeg = jatekososszeg + randomjatekoskartya
                 jatekoskartyalist.append(randomjatekoskartya)
-                vezetokartyalist.append(randomvezetokartya)
-                if len(jatekoskartyalist) == 2:
+                while len(jatekoskartyalist) >= 2:
                     print("Mit szeretne elvégezni?\n-(1) Stand (Kimarad a körből)\n-(2) Hit (Kér mégegy lapot)\n")
-                    print("A te kártyáid: ", jatekoskartyalist)
-                    print("Az osztó kártyái: ", vezetokartyalist)
+                    print("A te kártyáid: ",jatekoskartyalist)
+                    print("Az osztó kártyái: ",vezetokartyalist)
                     valasz = int(input())
-                    #if valasz == 1:
+                    if valasz == 1:
+                        for i in range(1):
+                            randomvezetokartya = random.choice(kartyak)
+                            if randomvezetokartya == "A" or randomvezetokartya == "K" or randomvezetokartya == "J" or randomvezetokartya == "Q":
+                                vezetosszeg = vezetosszeg + 10
+                            else:
+                                vezetosszeg = vezetosszeg + randomvezetokartya
+                            if vezetosszeg > 21:
+                                print("Az osztó kártyáinak száma több mint 21 lett!")
+                                zseton = zseton + 2*(tet)
+                                mehet = 0
+                                jatek = 0
+                                jatekoskartyalist = []
+                                break
+                            vezetokartyalist.append(randomvezetokartya)
+                    if valasz == 2:
+                        for i in range(1):
+                            randomjatekoskartya = random.choice(kartyak)
+                            if randomjatekoskartya == "A" or randomjatekoskartya == "K" or randomjatekoskartya == "J" or randomjatekoskartya == "Q":
+                                jatekososszeg = jatekososszeg + 10
+                            else:
+                                jatekososszeg = jatekososszeg + randomjatekoskartya
+                            if jatekososszeg > 21:
+                                print("Túl lépted a 21-et!")
+                                mehet = 0
+                                jatek = 0
+                                break
+                            jatekoskartyalist.append(randomjatekoskartya)
+
 
 
 
