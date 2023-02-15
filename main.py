@@ -5,11 +5,11 @@ os.system('cls')  #Töröl a Consolból mindent ami elötte van
 import random #Random modult beimportáljuk
 import time #Time modult beimportáljuk
 
-zseton = 500 #Kezdő zsteon szám
+zseton = 500 #Kezdő zseton szám
 
 
 while(True):
-    print("- Roulett (1) \n- BlackJack (2) \n- Darts (3)\n")
+    print("- Roulett (1) \n- BlackJack (2) \n- Darts (3)\n- Zseton változtatás(4)")
     print("\nZsetonok száma:", zseton)
     jatek = int(input("Kérem adja meg annak a játéknak a számát amivel játszani szeretne: "))
     if zseton == 0:
@@ -70,6 +70,7 @@ while(True):
         while(mehet == 1):
             jatekoskartyalist = []
             vezetokartyalist = []
+            korszam = []
             jatekososszeg = 0
             vezetosszeg = 0
             for i in range(1):
@@ -87,6 +88,7 @@ while(True):
                     jatekososszeg = jatekososszeg + randomjatekoskartya
                 jatekoskartyalist.append(randomjatekoskartya)
                 while len(jatekoskartyalist) >= 2:
+                    
                     print("Mit szeretne elvégezni?\n-(1) Stand (Kimarad a körből)\n-(2) Hit (Kér mégegy lapot)\n")
                     print("A te kártyáid: ",jatekoskartyalist)
                     print("Az osztó kártyái: ",vezetokartyalist)
@@ -167,5 +169,30 @@ while(True):
                         break
                 else:
                     continue
-            
+    while jatek == 4:
+        mehet = 1
+        while mehet == 1:
+            print("(1) Zseton szám növelése")
+            print("(2) Zseton szám csökkentése")
+            print("(3) Kilépés")
+            valasz = int(input())
+            if valasz == 1:
+                print("Kérem adja meg, hogy mennyit szeretne hozzáadni a zseton számhoz!")
+                nov = int(input())
+                zseton = zseton + nov
+                jatek = 0
+                mehet = 0
+                break
+            if valasz == 2:
+                print("Kérem ajda meg, hogy mennyit szeretne elvenni a zseton számból")
+                csok = int(input())
+                zseton = zseton - csok
+                jatek = 0
+                mehet = 0
+                break
+            if valasz == 3:
+                break
+            break
+        break
+    break
 
