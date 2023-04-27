@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <title>SkyShowTime</title>
+	<link rel="stylesheet" href="css.css">
+</head>
+<body>
+<nav>
+    <header>
+    <ul>
+    <li>SkyShowTime</li>
+    </ul>
+</nav>
+</header>
+    <p>Története:</p>
+    <h1>2021 augusztusában a <b>Comcast bejelentette</b>, hogy megállapodást kötött a <b>Paramount Global</b>-al, hogy elindítsanak egy közös streaming szolgáltatást <u><b>SkyShowtime</b></u> néven, amely a két vállalat műsorait egyesíti.</h1>
+    <p>Kínálat:</p>
+    <h1>A szolgáltatás legfőképp a <b>Paramount Global</b>, <b>Sky</b> és az <b>NBCUniversal</b> műsortárjából fog válogatni, emellett megkapja a <b>Peacock</b> és a <b>Paramount+</b> saját gyártású tartalmait is.</h1>
+    <h2><img src="kep1.png"><img src="kep2.png"><img src="kep3.png">  </h2>
+</body>
+</html>
